@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @NamedQueries({
     @NamedQuery(
-            name = "getAlltasks",
+            name = "getAlltask",
             query = "SELECT m FROM tasks AS m ORDER BY m.id DESC"
             )
 })
