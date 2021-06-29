@@ -14,16 +14,16 @@ import models.tasks;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class ShowServlet
+ * Servlet implementation class EditServlet
  */
-@WebServlet("/show")
-public class ShowServlet extends HttpServlet {
+@WebServlet("/edit")
+public class EditServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowServlet() {
+    public EditServlet() {
         super();
     }
 
@@ -38,9 +38,12 @@ public class ShowServlet extends HttpServlet {
         em.close();
 
         request.setAttribute("tasks", m);
+        request.setAttribute("_token", request.getSession().getId());
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/task/show.jsp");
-        rd.forward(request,response);
+        request.getSession().setAttribute("tasks_id", m.getId());
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/task/edit.jsp");
+        rd.forward(request, response);
 
     }
 
