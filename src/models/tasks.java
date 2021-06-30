@@ -22,7 +22,7 @@ import javax.persistence.Table;
             query = "SELECT COUNT(m) FROM tasks AS m"
             )
 })
-@Table(name = "task")
+@Table(name = "tasks")
 
 public class tasks {
     @Id
