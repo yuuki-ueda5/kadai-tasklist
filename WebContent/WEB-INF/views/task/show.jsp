@@ -21,7 +21,7 @@
                     <td><fmt:formatDate value="${tasks.created_at}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
                 </tr>
                 <tr>
-                    <th>タスク名</th>
+                    <th>タスク内容</th>
                     <td><c:out value="${tasks.content}" /></td>
                 </tr>
             </tbody>
